@@ -77,8 +77,6 @@ git references:
 git provides some sample names for these commit ids.Wecan use these names directly instead of commit ids.These arejust pointers to commit ids.
 symbolic references-->if any reference pointing to another reference
 Detached Head-->sometime head not pointing to the master
-
-
 git show master
 git show HEAD 
 git show HEAD~1
