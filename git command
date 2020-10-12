@@ -1,0 +1,84 @@
+git init--->used to create empty local repo
+git add <file name>-->add files from working directory to stage area(index area or cache area)
+git commit -m "commit message"-->commit the files
+git status (or) git status -s-->view the status
+git log-->commit log
+
+
+git config:
+git config --global user.name "username"
+git config --list-->listout all git config
+change user name and email:
+git config user.name "tru"
+git config user.email "mail@gmail.com"
+
+ls-->view the files in pariticular folder
+ls -a-->view the hidden files in a particular area
+
+Modification file direct comit:
+git commit -a -m "commit message"
+
+git files-->view the git files
+
+
+File creation:
+cat > filename.txt
+file content added
+Modification file:
+cat >> filename.txt
+file content added.
+
+used to create project path
+mkdir name
+
+git add .
+git add *
+git add -A
+git *.java
+
+git ls-files--->it is used to view the tracking files by git.
+
+
+git log:
+1)git log --oneline(commit id+commit msg)
+2)git log -n 2 --oneline(only show first two commits)
+3)git log -3(only show first three commits)
+4)--since="2010-09-08"(specific date and time)
+
+
+
+git diff:
+1)git diff filename name--->d/b working and staging area commits
+2)git diff HEAD file1.txt (working directory vs local repo)
+3)git diff --staged HEAD filename(staged and local repo)
+4)git diff (7characters) filename(working directory vs specific commits)
+5)git diff --staged (7characters) (working directory vs specific commits)
+6)git diff (1commit 7characters)(2nd comit 7characters) filename(two commit difference check)
+7)git diff HEAD HEAD(~ or ^)1 filename(last commit and previos commit)
+
+
+
+
+git remove:
+Note:git rm (or) git rm .-->Invalid command
+All files removed command git rm -r .
+1)git rm filename(both working directory and stage area)
+2)git rm --cached filename (only for statging area)
+3)rm filename(only for working directory)
+
+
+
+git checkout:(undo operation)
+1)git checkout(find the checkot files)
+2)git checkout --filename (or) git checkout filename
+
+
+git references:
+git provides some sample names for these commit ids.Wecan use these names directly instead of commit ids.These arejust pointers to commit ids.
+symbolic references-->if any reference pointing to another reference
+Detached Head-->sometime head not pointing to the master
+
+
+git show master
+git show HEAD 
+git show HEAD~1
