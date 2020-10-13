@@ -24,8 +24,8 @@ git files-->view the git files
 File creation:
 cat > filename.txt
 file content added
-Modification file:
-cat >> filename.txt
+Modification(append) file:
+cat >> filename.txt (or) echo "hyioo">>filename.txt
 file content added.
 
 used to create project path
@@ -68,7 +68,7 @@ All files removed command git rm -r .
 
 
 
-git checkout:(undo operation)
+git checkout:(undo operation in wD)
 1)git checkout(find the checkot files)
 2)git checkout --filename (or) git checkout filename
 
@@ -77,6 +77,82 @@ git references:
 git provides some sample names for these commit ids.Wecan use these names directly instead of commit ids.These arejust pointers to commit ids.
 symbolic references-->if any reference pointing to another reference
 Detached Head-->sometime head not pointing to the master
+
+
 git show master
 git show HEAD 
 git show HEAD~1
+
+
+git reset:
+case 1:To discard changes in sa
+git reset filename --->only changes can be revertd.
+
+case 2:To undo commits at repo level
+git reset <mode> <commitid> Mode will decide whether these changes are going to remove from staging area or not from working directly or not.
+Note:undo random commit is not possible.
+
+The allowed values for the mode are:
+--mixed -->It is a default mode.(remove commits from repo and staging area)
+--soft -->Exactly same as mixed but remove commits from only repo
+--hard-->Exactly same as mixed but commit deleted everywhere.
+1)git reset --mixed <commit-id>
+
+
+git Aliasing:
+Alias-->alternative name or nick name(.gitconfig store the value) 
+By using "git config"
+Syntax:$ git config --global alias.aliasname "Actual command(remove git)"
+$ git config --global alias.one "log --oneline"
+
+git ignore:
+touch .x .y(.*)
+touch a.txt b.txt c.txt (*.txt)
+logs(logs/)
+mkdir logs
+touch logs/server.logs logs/server
+-->cat .gitignore
+#Ignore a.txt file
+a.txt
+
+Git Branching:(An indepedent flow of development)
+Generally main source code we will placeanch in master branch.
+Multiple flows-->parallel development ,code base was very clean.
+
+conclusions:
+1)once we create a branch all files and commits will be inherited from parent to chile branch.
+2)All branches are isolated to each other.changes not visible to the other changes.
+
+Find the branch:
+git branch
+* master-->* indicates currently active branch
+
+To create a new branch:
+git branch branch_name
+git checkout -b branch_name(shortcut for creating branch name and switch branch name)
+
+Switch one branch to another branch:
+git checkout branch_name
+
+Is git create a new directory?
+Is git copy all the files ent to child from parent?
+Ans:It is logical duplication of files.
+
+HEAD-->always pointing to current active branch.
+heads-->contains all branch information.
+
+Merging of a branch:
+1)first change head point as master
+/d/gitprojects/project3 (master)
+$ git merge feature
+
+Types of merging:
+1)Fast forward merge-->After creating child branch,if we are not doing any changes in the parent branch,git will proform Fast-forward merge.
+2)Three way merge-->After creating child branch some commit performed in parent branch at the time three way merge performed by git.(Both parent and child branches updated)
+
+
+Deleting a branch:
+git branch -d <branch_name>
+
+delete a line in vi editor:
+syntax:dd
