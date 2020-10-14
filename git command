@@ -1,3 +1,7 @@
+git clone -b Logeshvarshit-patch-1 https://github.com/Logeshvarshith/training.git
+syntax:git clone -b {branch name} {url}
+
+
 git init--->used to create empty local repo
 git add <file name>-->add files from working directory to stage area(index area or cache area)
 git commit -m "commit message"-->commit the files
@@ -68,7 +72,7 @@ All files removed command git rm -r .
 
 
 
-git checkout:(undo operation in wD)
+git checkout:(undo operation in wD)--->todiscard unstaged changes in working directory of tracked files.
 1)git checkout(find the checkot files)
 2)git checkout --filename (or) git checkout filename
 
@@ -156,3 +160,38 @@ git branch -d <branch_name>
 
 delete a line in vi editor:
 syntax:dd
+
+Git rebase:[alternative way to merge]
+1.change Non-Linear graph to linear graph
+2.New commits should not be created like merge-commit
+3.we should not have any conflicts.
+
+Rebase-->Re+base-->Re arrange base
+
+Steps-1:Rebase feature branch on top of master branch
+git checkout feature
+git rebase master
+
+step 2:
+git checkout master
+git merge feature
+
+Git Stash:
+stash:store safely in a hidden place.
+Git stash:we have to save uncommitted changes from working directory and staging area to some temporary location.
+syntax:git stash
+
+limitations:
+git stash is applicable for only tracked file.atleast one commit should be there.
+
+How many stashes are there?
+git stash list
+
+view the file:
+git show stash id
+
+
+Git Unstash:
+2ways:
+1.git stash pop stash id--->the corresponding stash entry will be deleted.
+2.git stash apply stash id-->the corresponding stash entry won't be deleted.
