@@ -1,3 +1,4 @@
+URL:http://git.github.io/git-reference/remotes/#fetch
 git clone -b Logeshvarshit-patch-1 https://github.com/Logeshvarshith/training.git
 syntax:git clone -b {branch name} {url}
 
