@@ -158,6 +158,8 @@ Types of merging:
 
 Deleting a branch:
 git branch -d <branch_name>
+Deleting branch in Git also:
+git push origin --delete <branch-name>
 
 delete a line in vi editor:
 syntax:dd
